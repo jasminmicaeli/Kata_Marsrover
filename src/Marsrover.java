@@ -6,6 +6,9 @@ public class Marsrover {
 
     public Marsrover(String departureCoordinates) {
         this.latestCoordinates = departureCoordinates;
+        String[] arrOfSingleDatas = departureCoordinates.split(":");
+        x_Coordinate = Integer.parseInt(arrOfSingleDatas[0]);
+        y_Coordinate = Integer.parseInt(arrOfSingleDatas[1]);
     }
 
     public String getCoordinates() {
