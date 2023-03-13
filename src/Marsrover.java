@@ -6,6 +6,8 @@ public class Marsrover {
     int x_Coordinate;
     int y_Coordinate;
     String direction;
+    int widthOfPlanet = 10;
+    int heightOfPlanet = 10;
 
     public Marsrover(String departureCoordinates) {
         this.latestCoordinates = departureCoordinates;
