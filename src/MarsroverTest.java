@@ -70,4 +70,24 @@ public class MarsroverTest {
         assertEquals(expected, actual);
     }
 
+    @ParameterizedTest
+    @MethodSource("movingBackwardFacingDifferentDirections")
+    public void beAbleToMoveBackward_facingDifferentDirections(String departure, String expected){
+        String actual;
+
+        Marsrover marsrover = new Marsrover(departure);
+        marsrover.move("B");
+        actual = marsrover.getCoordinates();
+
+        assertEquals(expected, actual);
+    }
+
+    private static Stream<Arguments>movingBackwardFacingDifferentDirections(){
+        return Stream.of(
+                Arguments.of("3:3:N", "3:2:N"),
+                Arguments.of("3:3:E", "2:3:E"),
+                Arguments.of("3:3:S", "3:4:S"),
+                Arguments.of("3:3:W", "4:3:W")
+        );
+    }
 }
