@@ -31,4 +31,17 @@ public class MarsroverTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void beAbleToMoveBackwards_shouldReturn_2_1_N(){
+        String expected = "2:1:N";
+        String actual;
+        String departure = "2:2:N";
+
+        Marsrover marsrover = new Marsrover(departure);
+        marsrover.move("B");
+        actual = marsrover.getCoordinates();
+
+        assertEquals(expected, actual);
+    }
+
 }
