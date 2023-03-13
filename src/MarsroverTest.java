@@ -8,8 +8,9 @@ public class MarsroverTest {
     public void beAbleToReturnLastCoordinates_shouldReturn_1_1_N(){
         String expected = "1:1:N";
         String actual;
+        String departure = "1:1:N";
 
-        Marsrover marsrover = new Marsrover();
+        Marsrover marsrover = new Marsrover(departure);
         actual = marsrover.getCoordinates();
 
         assertEquals(expected, actual);
