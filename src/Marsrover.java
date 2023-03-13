@@ -35,18 +35,11 @@ public class Marsrover {
     }
 
     private void moveForward() {
-
-        if(Objects.equals(direction, "N")){
-            y_Coordinate ++;
-        }
-        else if(Objects.equals(direction, "E")){
-            x_Coordinate++;
-        }
-        else if(Objects.equals(direction, "S")){
-            y_Coordinate--;
-        }
-        else if(Objects.equals(direction, "W")){
-            x_Coordinate--;
+        switch (direction) {
+            case "N" -> y_Coordinate++;
+            case "E" -> x_Coordinate++;
+            case "S" -> y_Coordinate--;
+            case "W" -> x_Coordinate--;
         }
 
     }
