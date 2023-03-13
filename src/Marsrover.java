@@ -11,4 +11,10 @@ public class Marsrover {
     public String getCoordinates() {
         return latestCoordinates;
     }
+
+    public void move(String command) {
+        if(command == "F"){
+            y_Coordinate ++;
+        }
+    }
 }
