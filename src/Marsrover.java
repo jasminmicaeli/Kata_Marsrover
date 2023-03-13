@@ -27,7 +27,12 @@ public class Marsrover {
     }
 
     private void moveBackwards() {
-        y_Coordinate--;
+        switch (direction) {
+            case "N" -> y_Coordinate--;
+            case "E" -> x_Coordinate--;
+            case "S" -> y_Coordinate++;
+            case "W" -> x_Coordinate++;
+        }
     }
 
     private void moveForward() {
