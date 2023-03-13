@@ -90,4 +90,25 @@ public class MarsroverTest {
                 Arguments.of("3:3:W", "4:3:W")
         );
     }
+
+    @ParameterizedTest
+    @MethodSource("turningLeftFacingDifferentDirections")
+    public void beAbleToTurnLeft_shouldChangeDirection(String departure, String expected){
+        String actual;
+
+        Marsrover marsrover = new Marsrover(departure);
+        marsrover.move("L");
+        actual = marsrover.direction;
+
+        assertEquals(expected, actual);
+    }
+
+    private static Stream<Arguments>turningLeftFacingDifferentDirections(){
+        return Stream.of(
+                Arguments.of("2:2:N", "2:2:W"),
+                Arguments.of("2:2:W", "2:2:S"),
+                Arguments.of("2:2:S", "2:2:E"),
+                Arguments.of("2:2:E", "2:2:N")
+        );
+    }
 }
