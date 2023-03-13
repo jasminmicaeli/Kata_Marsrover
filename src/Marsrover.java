@@ -20,13 +20,9 @@ public class Marsrover {
     }
 
     public void move(String command) {
-        switch (command){
-            case "F":
-                moveForward();
-                break;
-            case "B":
-                moveBackwards();
-                break;
+        switch (command) {
+            case "F" -> moveForward();
+            case "B" -> moveBackwards();
         }
     }
 
