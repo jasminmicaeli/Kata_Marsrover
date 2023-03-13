@@ -50,8 +50,8 @@ public class MarsroverTest {
     private static Stream<Arguments>movingForwardFacingDifferentDirections(){
         return Stream.of(
                 Arguments.of("3:3:N", "3:4:N"),
-                Arguments.of("3:3:E", "2:3:E"),
-                Arguments.of("3:3:S", "2:3:S"),
+                Arguments.of("3:3:E", "4:3:E"),
+                Arguments.of("3:3:S", "3:2:S"),
                 Arguments.of("3:3:W", "2:3:W")
         );
     }
