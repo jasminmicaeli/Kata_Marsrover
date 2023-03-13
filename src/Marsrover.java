@@ -20,22 +20,34 @@ public class Marsrover {
     }
 
     public void move(String command) {
-        if(command == "F"){
-            if(Objects.equals(direction, "N")){
-                y_Coordinate ++;
-            }
-            else if(Objects.equals(direction, "E")){
-                x_Coordinate++;
-            }
-            else if(Objects.equals(direction, "S")){
-                y_Coordinate--;
-            }
-            else if(Objects.equals(direction, "W")){
-                x_Coordinate--;
-            }
+        switch (command){
+            case "F":
+                moveForward();
+                break;
+            case "B":
+                moveBackwards();
+                break;
         }
-        if(command == "B"){
+    }
+
+    private void moveBackwards() {
+        y_Coordinate--;
+    }
+
+    private void moveForward() {
+
+        if(Objects.equals(direction, "N")){
+            y_Coordinate ++;
+        }
+        else if(Objects.equals(direction, "E")){
+            x_Coordinate++;
+        }
+        else if(Objects.equals(direction, "S")){
             y_Coordinate--;
         }
+        else if(Objects.equals(direction, "W")){
+            x_Coordinate--;
+        }
+
     }
 }
