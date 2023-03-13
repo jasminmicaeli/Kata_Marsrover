@@ -14,7 +14,7 @@ public class Marsrover {
     }
 
     public String getCoordinates() {
-        return latestCoordinates;
+        return String.valueOf(x_Coordinate) + ":" + String.valueOf(y_Coordinate) + ":" + direction;
     }
 
     public void move(String command) {
