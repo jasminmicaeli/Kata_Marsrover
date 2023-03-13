@@ -17,6 +17,11 @@ public class Marsrover {
         direction = arrOfSingleDatas[2];
     }
 
+    public void changeSizeOfPlanet(int width, int height){
+        this.widthOfPlanet = width;
+        this.heightOfPlanet = height;
+    }
+
     public String getCoordinates() {
         return String.valueOf(x_Coordinate) + ":" + String.valueOf(y_Coordinate) + ":" + direction;
     }
