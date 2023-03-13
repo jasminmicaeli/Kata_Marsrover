@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Marsrover {
 
     String latestCoordinates;
@@ -19,7 +21,18 @@ public class Marsrover {
 
     public void move(String command) {
         if(command == "F"){
-            y_Coordinate ++;
+            if(Objects.equals(direction, "N")){
+                y_Coordinate ++;
+            }
+            else if(Objects.equals(direction, "E")){
+                x_Coordinate++;
+            }
+            else if(Objects.equals(direction, "S")){
+                y_Coordinate--;
+            }
+            else if(Objects.equals(direction, "W")){
+                x_Coordinate--;
+            }
         }
         if(command == "B"){
             y_Coordinate--;
