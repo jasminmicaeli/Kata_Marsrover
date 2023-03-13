@@ -23,6 +23,16 @@ public class Marsrover {
         switch (command) {
             case "F" -> moveForward();
             case "B" -> moveBackwards();
+            case "L" -> turnLeft();
+        }
+    }
+
+    private void turnLeft() {
+        switch (direction){
+            case "N" -> direction = "W";
+            case "E" -> direction = "N";
+            case "S" -> direction = "E";
+            case "W" -> direction = "S";
         }
     }
 
