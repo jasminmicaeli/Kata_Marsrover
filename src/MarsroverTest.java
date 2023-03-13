@@ -105,10 +105,10 @@ public class MarsroverTest {
 
     private static Stream<Arguments>turningLeftFacingDifferentDirections(){
         return Stream.of(
-                Arguments.of("2:2:N", "2:2:W"),
-                Arguments.of("2:2:W", "2:2:S"),
-                Arguments.of("2:2:S", "2:2:E"),
-                Arguments.of("2:2:E", "2:2:N")
+                Arguments.of("2:2:N", "W"),
+                Arguments.of("2:2:W", "S"),
+                Arguments.of("2:2:S", "E"),
+                Arguments.of("2:2:E", "N")
         );
     }
 }
