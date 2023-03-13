@@ -21,5 +21,8 @@ public class Marsrover {
         if(command == "F"){
             y_Coordinate ++;
         }
+        if(command == "B"){
+            y_Coordinate--;
+        }
     }
 }
