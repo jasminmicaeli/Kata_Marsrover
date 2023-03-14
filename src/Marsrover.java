@@ -55,10 +55,28 @@ public class Marsrover {
 
     private void moveBackwards() {
         switch (direction) {
-            case "N" -> y_Coordinate--;
-            case "E" -> x_Coordinate--;
-            case "S" -> y_Coordinate++;
-            case "W" -> x_Coordinate++;
+            case "N" -> {
+                y_Coordinate--;
+                if(y_Coordinate < 1) y_Coordinate = heightOfPlanet;
+            }
+            case "E" -> {
+                x_Coordinate--;
+                if(x_Coordinate < 1){
+                    x_Coordinate = widthOfPlanet;
+                }
+            }
+            case "S" -> {
+                y_Coordinate++;
+                if (y_Coordinate > heightOfPlanet){
+                    y_Coordinate = 1;
+                }
+            }
+            case "W" -> {
+                x_Coordinate++;
+                if(x_Coordinate > widthOfPlanet){
+                    x_Coordinate = 1;
+                }
+            }
         }
     }
 
