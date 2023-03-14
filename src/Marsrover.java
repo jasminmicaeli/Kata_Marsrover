@@ -57,25 +57,19 @@ public class Marsrover {
         switch (direction) {
             case "N" -> {
                 y_Coordinate--;
-                if(y_Coordinate < 1) y_Coordinate = heightOfPlanet;
+                if(reachedEdge("bottom")) y_Coordinate = heightOfPlanet;
             }
             case "E" -> {
                 x_Coordinate--;
-                if(x_Coordinate < 1){
-                    x_Coordinate = widthOfPlanet;
-                }
+                if(reachedEdge("left")) x_Coordinate = widthOfPlanet;
             }
             case "S" -> {
                 y_Coordinate++;
-                if (y_Coordinate > heightOfPlanet){
-                    y_Coordinate = 1;
-                }
+                if (reachedEdge("top")) y_Coordinate = 1;
             }
             case "W" -> {
                 x_Coordinate++;
-                if(x_Coordinate > widthOfPlanet){
-                    x_Coordinate = 1;
-                }
+                if(reachedEdge("right")) x_Coordinate = 1;
             }
         }
     }
@@ -84,21 +78,27 @@ public class Marsrover {
         switch (direction) {
             case "N" -> {
                 y_Coordinate++;
-                if(y_Coordinate > heightOfPlanet) y_Coordinate = 1;
+                if(reachedEdge("top")) y_Coordinate = 1;
             }
             case "E" -> {
                 x_Coordinate++;
-                if(x_Coordinate > widthOfPlanet) x_Coordinate = 1;
+                if(reachedEdge("right")) x_Coordinate = 1;
             }
             case "S" -> {
                 y_Coordinate--;
-                if(y_Coordinate < 1) y_Coordinate = heightOfPlanet;
+                if(reachedEdge("bottom")) y_Coordinate = heightOfPlanet;
             }
             case "W" -> {
                 x_Coordinate--;
-                if(x_Coordinate < 1) x_Coordinate = widthOfPlanet;
+                if(reachedEdge("left")) x_Coordinate = widthOfPlanet;
             }
         }
+    }
 
+    private boolean reachedEdge(String edge) {
+        if          (edge == "top"      && y_Coordinate > heightOfPlanet)   return true;
+        else if     (edge == "bottom"   && y_Coordinate < 1)                return true;
+        else if     (edge == "left"     && x_Coordinate < 1)                return true;
+        else return  edge == "right"    && x_Coordinate > widthOfPlanet;
     }
 }
