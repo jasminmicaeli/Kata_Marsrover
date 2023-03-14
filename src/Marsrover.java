@@ -96,9 +96,9 @@ public class Marsrover {
     }
 
     private boolean reachedEdge(String edge) {
-        if          (edge == "top"      && y_Coordinate > heightOfPlanet)   return true;
-        else if     (edge == "bottom"   && y_Coordinate < 1)                return true;
-        else if     (edge == "left"     && x_Coordinate < 1)                return true;
-        else return  edge == "right"    && x_Coordinate > widthOfPlanet;
+        if          (Objects.equals(edge, "top")    && y_Coordinate > heightOfPlanet)   return true;
+        else if     (Objects.equals(edge, "bottom") && y_Coordinate < 1)                return true;
+        else if     (Objects.equals(edge, "left")   && x_Coordinate < 1)                return true;
+        else return  Objects.equals(edge, "right")  && x_Coordinate > widthOfPlanet;
     }
 }
