@@ -133,4 +133,43 @@ public class MarsroverTest {
                 Arguments.of("2:2:E", "S")
         );
     }
+
+    @Test
+    public void beAbleToHandleEdgeCases_shouldArriveAtBeginningWhenReachedMaxHeight_maxHeightBeing10(){
+        int expected_x_coordinate = 5;
+        int expected_y_coordinate = 1;
+        int actual_x_coordinate;
+        int actual_y_coordinate;
+        String given= "5:10:N";
+
+        Marsrover marsrover = new Marsrover(given);
+        marsrover.move("F");
+
+        actual_x_coordinate = marsrover.x_Coordinate;
+        actual_y_coordinate = marsrover.y_Coordinate;
+
+        assertEquals(expected_x_coordinate, actual_x_coordinate);
+        assertEquals(expected_y_coordinate, actual_y_coordinate);
+    }
+
+    @ParameterizedTest
+    @MethodSource("data_testingEdgeCases")
+    public void shouldBeAbleToHandleEdgeCases(String coordinates, String command, String expectedFinalLocation){
+
+        Marsrover marsrover = new Marsrover(coordinates);
+        marsrover.move(command);
+        String actualFinalLocation;
+
+        actualFinalLocation = marsrover.getCoordinates();
+
+        assertEquals(expectedFinalLocation, actualFinalLocation);
+
+    }
+    private static Stream<Arguments>data_testingEdgeCases(){
+        return Stream.of(
+                Arguments.of("10:1:E", "F", "1:1:E"),
+                Arguments.of("3:1:S", "F", "3:10:S"),
+                Arguments.of("1:1:E", "B", "10:1:E")
+        );
+    }
 }
