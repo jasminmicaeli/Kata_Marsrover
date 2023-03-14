@@ -2,23 +2,23 @@ import java.util.Objects;
 
 public class Marsrover {
 
-    String latestCoordinates;
-    int x_Coordinate;
-    int y_Coordinate;
-    String direction;
-    int widthOfPlanet = 10;
-    int heightOfPlanet = 10;
+    String  latestCoordinates;
+    int     x_Coordinate;
+    int     y_Coordinate;
+    String  direction;
+    int     widthOfPlanet   = 10;
+    int     heightOfPlanet  = 10;
 
     public Marsrover(String departureCoordinates) {
-        this.latestCoordinates = departureCoordinates;
-        String[] arrOfSingleDatas = departureCoordinates.split(":");
-        x_Coordinate = Integer.parseInt(arrOfSingleDatas[0]);
-        y_Coordinate = Integer.parseInt(arrOfSingleDatas[1]);
-        direction = arrOfSingleDatas[2];
+        this.latestCoordinates      = departureCoordinates;
+        String[] arrOfSingleDatas   = departureCoordinates.split(":");
+        this.x_Coordinate           = Integer.parseInt(arrOfSingleDatas[0]);
+        this.y_Coordinate           = Integer.parseInt(arrOfSingleDatas[1]);
+        this.direction              = arrOfSingleDatas[2];
     }
 
     public void changeSizeOfPlanet(int width, int height){
-        this.widthOfPlanet = width;
+        this.widthOfPlanet  = width;
         this.heightOfPlanet = height;
     }
 
