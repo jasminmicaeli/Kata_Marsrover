@@ -23,7 +23,7 @@ public class Marsrover {
     }
 
     public String getCoordinates() {
-        return String.valueOf(x_Coordinate) + ":" + String.valueOf(y_Coordinate) + ":" + direction;
+        return x_Coordinate + ":" + y_Coordinate + ":" + direction;
     }
 
     public void move(String command) {
